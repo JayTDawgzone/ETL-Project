@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Data</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="" style="height: 275px;", class='border shadow'>
+    <div class="jumbotron">
+      <h1 class="display-3">Pokemon Data</h1>
+      <p class="lead">A simple resource for data on Pokemon</p>
+    </div>
+
+  </div>
+
+<div class="row">
+<div class="container">
+<h2 class='display-5'>Pokemon List</h2>
+
+<div class="container">
+
+
+
+
+<input class="form-control" id="myInput" type="text" placeholder="Search by Pokemon Name">
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+
+<table class="table table-striped table-borderless table-responsive-sm bootstrap-table-filter-control">
+<thead class ='thead-dark'>
+  <tr style="text-align: right;">
+    <th></th>
+    <th>Pokedex ID</th>
+    <th>Pokemon</th>
+
+  </tr>
+  <tbody id='myTable' style="text-align: right;">
+    {% for x in pokemon_data %}
+    <tr>
+
+      <td><a href="/pokemon/{{x.pokemon_name}}"><img src="{{x.sprite}}" width="100" ></a></td>
+      <td>{{x.national_pokedex_number}}</td>
+      <td><a href="/pokemon/{{x.pokemon_name}}">{{x.pokemon_name}}</a></td>
+
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+      $(document).ready(function(){
+      $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      $("#myTable tr").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+      });
+      });
+</script>
+</body>
+</html>

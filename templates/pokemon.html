@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pokemon Data: {{pokemon_data[0].pokemon_name}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+
+
+  <div class="jumbotron jumbotron">
+  <div class="container">
+    <h1 class="display-4"><img src="{{pokemon_data[0].sprite}}" alt="..." class="img-thumbnail">{{pokemon_data[0].pokemon_name}}</h1>
+    <p class="lead"><strong>No. {{pokemon_data[0].national_pokedex_number}}</strong></p>
+  </div>
+</div>
+</div>
+
+
+<div class="container bg-light">
+  <h1>Game Stats</h1>
+</div>
+<div class="container">
+
+
+<div class="row">
+<div class="col-lg-3">
+<div class="container">
+  <ul class="list-group border">
+    <li class="list-group-item list-group-item-info"><strong>Base Stats</strong></li>
+    <table class='table text-left'>
+    <tr>
+  <th scope="row"></th>
+  <td><strong>HP:</strong></td>
+  <td>{{pokemon_data[0].base_stats.hp}}</td>
+    </tr>
+    <tr>
+  <th scope="row"></th>
+  <td><strong>Attack:</strong></td>
+  <td>{{pokemon_data[0].base_stats.attack}}</td>
+    </tr>
+    <tr>
+  <th scope="row"></th>
+  <td><strong>Defense:</strong></td>
+  <td>{{pokemon_data[0].base_stats.defense}}</td>
+    </tr>
+    <tr>
+  <th scope="row"></th>
+  <td><strong>Special Attack:</strong></td>
+  <td>{{pokemon_data[0].base_stats.special_attack}}</td>
+    </tr>
+    <tr>
+  <th scope="row"></th>
+  <td><strong>Special Defense:</strong></td>
+  <td>{{pokemon_data[0].base_stats.special_defense}}</td>
+    </tr>
+    <tr>
+  <th scope="row"></th>
+  <td><strong>Speed:</strong></td>
+  <td>{{pokemon_data[0].base_stats.speed}}</td>
+    </tr>
+<tbody>
+    </table>
+
+
+
+
+</ul>
+</div>
+</div>
+<div class="col-lg-3">
+  <div class="container">
+    <ul class="list-group border">
+      <li class="list-group-item list-group-item-warning"><strong>Types</strong></li>
+      <table class='table text-left'>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Type 1</strong></td>
+    <td>{{pokemon_data[0].types.pokemon_type1}}</td>
+      </tr>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Type 2</strong></td>
+    <td>{{pokemon_data[0].types.pokemon_type2}}</td>
+      </tr>
+  <tbody>
+      </table>
+  </ul>
+    <ul class="list-group border">
+      <li class="list-group-item list-group-item-success"><strong>Height/Weight</strong></li>
+      <table class='table text-left'>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Height</strong></td>
+    <td>{{pokemon_data[0].pokemon_height}}</td>
+      </tr>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Weight</strong></td>
+    <td>{{pokemon_data[0].pokemon_weight}}</td>
+      </tr>
+  <tbody>
+      </table>
+
+
+
+
+  </ul>
+  </div>
+</div>
+
+
+<div class="col-lg-5">
+  <div class="container">
+    <ul class="list-group border">
+      <li class="list-group-item list-group-item-primary"><strong>Other</strong></li>
+      <table class='table text-left'>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Base Hapiness</strong></td>
+    <td>{{pokemon_data[0].base_hapiness}}</td>
+      </tr>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Color Group</strong></td>
+    <td>{{pokemon_data[0].color_group}}</td>
+      </tr>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Egg Group</strong></td>
+    <td>{{pokemon_data[0].egg_group}}</td>
+      </tr>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Generation</strong></td>
+    <td>{{pokemon_data[0].generation}}</td>
+      </tr>
+      <tr>
+    <th scope="row"></th>
+    <td><strong>Shape</strong></td>
+    <td>{{pokemon_data[0].shape}}</td>
+      </tr>
+  <tbody>
+      </table>
+  </ul>
+  </div>
+</div>
+
+
+</div>
+</div>
+<div class="container bg-light">
+  <h1>Trading Cards</h1>
+</div>
+<div class="container">
+
+<!-- {% for y in pokemon_data[0].card_data.card_id %}
+<a href="../card/{{y}}">{{y}}</a>
+{% endfor %} -->
+    {% for x in pokemon_data[0].card_data.image_url %}
+
+        <a href="../card/{{pokemon_data[0].card_data.card_id}}"><img src="{{x}}" style="height: 342px; margin: 10px;">
+
+    {% endfor %}
+
+
+</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Card: {{card_data[0].card_name}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<div class="container">
+<div class="row">
+
+
+<div class="col-lg-4">
+
+<ul class="list-group">
+  <li class="list-group-item "><img src="{{card_data[0].image_url}}" alt="..." class="img-thumbnail"></li>
+  <li class="list-group-item list-group-item-primary text-center" aria-disabled="true"><strong>{{card_data[0].card_name}}</strong></li>
+  <li class="list-group-item "><strong>Series:</strong> {{card_data[0].card_series}}</li>
+  <li class="list-group-item "><strong>Set:</strong> {{card_data[0].card_set}}</li>
+  <li class="list-group-item "><strong>Rarity:</strong> {{card_data[0].card_rarity}}</li>
+  <li class="list-group-item "><strong>Number:</strong> {{card_data[0].card_number}}</li>
+  <li class="list-group-item "><strong>Artist:</strong> {{card_data[0].card_artist}}</li>
+
+</ul>
+</div>
+<div class="col-lg-3">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-primary" aria-disabled="true">Card Attacks</li>
+    {% for x in card_data[0].card_attacks %}
+    <li class="list-group-item list-group-item-secondary">{{x.name}}      <strong>{{x.damage}}</strong></li>
+    <li class="list-group-item ">{{x.text}}</li>
+    {% endfor %}
+
+  </ul>
+</div>
+
+<div class="col-lg-4">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-primary" aria-disabled="true">Types</li>
+    {% for x in card_data[0].card_types %}
+    <li class="list-group-item ">{{x}}</li>
+    {% endfor %}
+    <li class="list-group-item list-group-item-primary" aria-disabled="true">Retreat Cost</li>
+    <li class="list-group-item ">{{card_data[0].card_converted_retreat_cost}}</li>
+    <li class="list-group-item list-group-item-primary" aria-disabled="true">Card HP</li>
+    <li class="list-group-item ">{{card_data[0].card_hp}}</li>
+    <li class="list-group-item list-group-item-primary" aria-disabled="true">Weakness</li>
+    <li class="list-group-item ">{{card_data[0].card_weaknesses[0].type}}{{card_data[0].card_weaknesses[0].value}}</li>
+    <li class="list-group-item list-group-item-primary" aria-disabled="true">Resistances</li>
+    <li class="list-group-item ">{{card_data[0].card_resistances}}</li>
+    <li class="list-group-item list-group-item-primary" aria-disabled="true">Subtype</li>
+    <li class="list-group-item ">{{card_data[0].card_subtype}}</li>
+
+  </ul>
+</div>
+
+
+<!-- <div class="col-lg-4">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-primary"" aria-disabled="true">Card Information</li>
+    <li class="list-group-item "><strong>Series:</strong> {{card_data[0].card_series}}</li>
+    <li class="list-group-item "><strong>Set:</strong> {{card_data[0].card_set}}</li>
+    <li class="list-group-item "><strong>Rarity:</strong> {{card_data[0].card_rarity}}</li>
+    <li class="list-group-item "><strong>Number:</strong> {{card_data[0].card_number}}</li>
+
+  </ul>
+</div> -->
+</div>
+</div>
+
+
+  </body>
+</html>
